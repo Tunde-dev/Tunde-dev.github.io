@@ -1,71 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Elérhetőségeink</title>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../lib/bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
 </head>
-<body>
-    <ul>
-        <li>
-            <a href="/">Főmenü</a>
-        </li>
-    </ul>
-    <ul>
-        <li>
-            <a href="/pages/products.html">Étlap</a>
-        </li>
-    </ul>
-    <ul>
-        <li>
-            <a href="/pages/orders.html">Rendelés</a>
-        </li>
-    </ul>
-    <ul>
-        <li>
-            <a href="/pages/about.html">Elérhetőségeink</a>
-        </li>
-    </ul>
 
-    <h1>Elérhetőségeink</h1>
+<body id="about-page">
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/"><img src="/img/logo.png" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <p>Hívj minket az alábbi telefonszámok egyikén:</p>
-    <a href="tel:0670123123"><em>0670123123</em></a>
-    <a href="tel:0630123123"><em>0630123123</em></a>
-    <p>Vagy írj nekünk az alábbi e-mail címre:</p>
-    <a href="mailto:tundehamburgerei@mail.com">tundehamburgerei@mail.com</a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/">Főmenü <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/products.html">Étlap</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/orders.html">Rendelés</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/about.html">Elérhetőségeink</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
 
-    <table>
-        <caption><h3>Nyitvatartás:</h3></caption>
-        <thead>
-            <tr>
-                <th>Nap</th>
-                <th>Nyitás</th>
-                <th>Zárás</th>
-            </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Hétfő - Péntek</td>
-            <td rowspan=2> 09:00 - </td>
-            <td>21:00</td>
-        </tr>
-        <tr>
-            <td>Szombat</td>
-            <td>23:00</td>
-        </tr>
-        <tr>
-            <td>Vasárnap</td>
-            <td colspan="2">Zárva</td>
-        </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan=3>&copy; 2020</td>
-            </tr>
-        </tfoot>
-    </table>
+        <div class="mask">
+            <div style="position: relative; width: 100%; height: 100%;">
+                <div class="welcome">
+                    <h1>
+                        <span> Welcome to</span> Tünde Bistro
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <h2>Elérhetőségeink</h2>
+
+        <p>Hívj minket az alábbi telefonszámok egyikén:</p>
+        <a href="tel:0670123123"><em>0670123123</em></a>
+        <a href="tel:0630123123"><em>0630123123</em></a>
+        <p>Vagy írj nekünk az alábbi e-mail címre:</p>
+        <a href="mailto:tundehamburgerei@mail.com">tundehamburgerei@mail.com</a>
+
+        <table>
+            <caption>
+                <h3>Nyitvatartás:</h3>
+            </caption>
+            <thead>
+                <tr>
+                    <th>Nap</th>
+                    <th>Nyitás</th>
+                    <th>Zárás</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hétfő - Péntek</td>
+                    <td rowspan=2> 09:00 - </td>
+                    <td>21:00</td>
+                </tr>
+                <tr>
+                    <td>Szombat</td>
+                    <td>23:00</td>
+                </tr>
+                <tr>
+                    <td>Vasárnap</td>
+                    <td colspan="2">Zárva</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan=3>&copy; 2020</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
 
 
 </body>
+
 </html>

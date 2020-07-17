@@ -1,36 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Rendelés</title>
-</head>
-<body>
-    <ul>
-        <li>
-            <a href="/">Főmenü</a>
-        </li>
-    </ul>
-    <ul>
-        <li>
-            <a href="/pages/products.html">Étlap</a>
-        </li>
-    </ul>
-    <ul>
-        <li>
-            <a href="/pages/orders.html">Rendelés</a>
-        </li>
-    </ul>
-    <ul>
-        <li>
-            <a href="/pages/about.html">Elérhetőségeink</a>
-        </li>
-    </ul>
-    <h1>Rendelés</h1>
-    <p>Rendeld házhoz a hamburgered. 
-        Ehhez nem kell mást tenned, csak válaszd ki kedvenc hamburgered a menüből, majd hívj minket az elérhetőségeinken.
-        És mi garantáltan fél óra alatt kiszállítjuk neked Budapest területén.
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../lib/bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="/css/style.css">
 
-    </p>
+
+</head>
+
+<body id="orders-page">
+    <div class="header">
+        <div class="wheater-widget">
+            <div class="container">
+                <div class="form-inline justify-content-end">
+                    <label class="my-1 mr-2" for="days-select">Időjárás</label>
+                    <select class="custom-select my-1 mr-sm-2" id="days-select">
+                        <option selected>Válaszd ki a napot...</option>
+                        <option value="0">Hétfő</option>
+                        <option value="1">Kedd</option>
+                        <option value="2">Szerda</option>
+                        <option value="3">Csütörtök</option>
+                        <option value="4">Péntek</option>
+                        <option value="5">Szombat</option>
+                        <option value="6">Vasárnap</option>
+                    </select>
+                    <button onclick="wheatherWidget()" class="btn btn-primary mr-2">Kiválaszt</button>
+                    <span class="temperatures"> 0</span>&#8451
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/"><img src="/img/logo.png" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/">Főmenü <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/products.html">Étlap</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/orders.html">Rendelés</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/about.html">Elérhetőségeink</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <div class="mask">
+            <div style="position: relative; width: 100%; height: 100%;">
+                <div class="welcome">
+                    <h1>
+                        <span> Welcome to</span> Tünde Bistro
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        <h2>Rendelés</h2>
+        <p class="tartalom">Rendeld házhoz a hamburgered.
+            Ehhez nem kell mást tenned, csak válaszd ki kedvenc hamburgered a menüből, majd hívj minket az
+            elérhetőségeinken.
+            És mi garantáltan fél óra alatt kiszállítjuk neked Budapest területén.
+        </p>
+
+        <form onsubmit="return validate()">
+            <fieldset>
+                <legend>Személyes adatok:</legend>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="firstname">Vezetéknév *:</label>
+                        <input id="firstname" class="form-control" name="firstname" type="text" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="lastname">Keresztnév *:</label>
+                        <input id="lastname" class="form-control" name="lastname" type="text" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-9 col-lg-10">
+                        <label for="address">Cím *:</label>
+                        <input id="address" class="form-control" name="address" type="text" required>
+                        <small>Város, közterület, házszám, ajtó</small>
+                    </div>
+                    <div class="form-group col-md-3 col-lg-2">
+                        <label for="zip">Irányítószám *:</label>
+                        <input id="zip" class="form-control" name="zip" type="text" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="email">Email *:</label>
+                        <input id="email" class="form-control" name="email" type="email" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="tel">Telefonszám *:</label>
+                        <input id="tel" class="form-control" name="tel" type="tel" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Megjegyzés :</label>
+                    <textarea id="comment" class="form-control" name="comment" rows="5"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Megrendelés adatai:</legend>
+                <span class="orders-style">Válaszd ki a megrendelni kívánt burgert és a megfelelő mennyiséget.</span>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label for="cheesesimpler">Sajtos burger</label>
+                        <input class="form-control" id="cheese-burger" name="cheese-burger" type="number" value="0"
+                            min="0" max="20">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="simple-burger">Sima burger</label>
+                        <input class="form-control" id="simple-burger" name="simple-burger" type="number" value="0"
+                            min="0" max="20">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="double-burger">Dupla burger</label>
+                        <input class="form-control" id="double-burger" name="double-burger" type="number" value="0"
+                            min="0" max="20">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="veggie-burger">Vega burger</label>
+                        <input class="form-control" id="veggie-burger" name="veggie-burger" type="number" value="0"
+                            min="0" max="20">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="extra-hot-burger">Extra csípős burger</label>
+                        <input class="form-control" id="extra-hot-burger" name="extra-hot-burger" type="number"
+                            value="0" min="0" max="20">
+                    </div>
+                </div>
+                <span>Extra feltétek:</span>
+                <div class="checkbox">
+                    <input id="tomato" name="tomato" type="checkbox" value="100">
+                    <label for="tomato">Paradicsom</label>
+                </div>
+                <div class="checkbox">
+                    <input id="onion" name="onion" type="checkbox" value="100">
+                    <label for="onion">Pirított hagyma</label>
+                </div>
+                <div class="checkbox">
+                    <input id="cheese" name="cheese" type="checkbox" value="200">
+                    <label for="cheese">Cheddar sajt</label>
+                </div>
+                <div class="checkbox">
+                    <input id="bacon" name="bacon" type="checkbox" value="200">
+                    <label for="bacon">Bacon</label>
+                </div>
+                <div class="checkbox">
+                    <input id="pickles" name="pickles" type="checkbox" value="100">
+                    <label for="pickles">Savanyú uborka</label>
+                </div>
+                <div class="checkbox">
+                    <input id="pepper" name="pepper" type="checkbox" value="100">
+                    <label for="pepper">Savanyú paprika</label>
+                </div>
+            </fieldset>
+            <div class="form-group">
+                Fizetendő: <span class="show-amount">0</span>Ft
+                <div>
+                    <button onclick="calcAmount()" type="button" class="btn btn-primary"><i class="fas fa-sync-alt"></i>
+                        Kalkuláció</button>
+                </div>
+                <div>
+                    <button onclick="calcAmount()" type="submit" class="btn btn-primary"><i
+                            class="fas fa-cart-arrow-down"></i> Megrendelés</button>
+                </div>
+
+        </form>
+    </div>
+    <script src="/js/main.js"></script>
 </body>
+
 </html>
