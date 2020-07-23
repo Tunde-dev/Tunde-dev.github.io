@@ -148,10 +148,15 @@ li a {
 }
 .wheater-widget {
    z-index: 1;
-   position: relative;
+   position: absolute;
    background-color: rgba(0,0,0,.5);
-
+   bottom: 0;
+   width: 100%;
 }
 .wheater-widget .form-inline {
    color: rgb(255, 255, 255);
+}
+.offerrapper {
+   color: rgb(255, 255, 255);
+   margin-top: 5px;
 }

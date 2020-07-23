@@ -4,9 +4,18 @@ const doubleBurgerPrice = 1000;
 const veggieBurgerPrice = 900;
 const extraHotBurgerPrice = 1200;
 
-const dayTemps = [25, 30, 32, 35, 33, 27, 29];
+const dayTemps = [-1, -5, 3, 14, 16, 25, 30];
 
-function calcAmount () {
+const tempLimits = [0, 15, 20, 25, 50];
+const offers = [
+    " Ha kint minuszok vannak, ugorj be egy forró csokira.",
+    " Mai ajánlatunk egy jó meleg tea.",
+    " Nincs is jobb ma egy finom sütinél.",
+    " Hűsítsd le magad a kedvenc fagyiddal.",
+    " Ebben a melegben nincs jobb választás egy jéghideg limonádénál.",
+];
+
+function calcAmount() {
     let subAmount = 0;
     let cheeseBurgerAmount = getAmount("input[name='cheese-burger']");
     let simpleBurgerAmount = getAmount("input[name='simple-burger']");
@@ -32,7 +41,7 @@ function calcAmount () {
     subAmount = subAmount + calcToppingAmount("input[name='bacon']:checked");
     subAmount = subAmount + calcToppingAmount("input[name='pickles']:checked");
     subAmount = subAmount + calcToppingAmount("input[name='pepper']:checked");
-    
+
     let showAmount = document.querySelector("span.show-amount");
     showAmount.innerHTML = subAmount;
 }
@@ -65,7 +74,7 @@ function personalDataValidator(firstname, lastname, address) {
     return true;
 }
 function emailValidator(email) {
-    if (!email || email.indexOf('.') === -1 || email.indexOf('@') === -1)  {
+    if (!email || email.indexOf('.') === -1 || email.indexOf('@') === -1) {
         alert("Helytelen e-mail cím!");
         return false;
     }
@@ -82,7 +91,47 @@ function wheatherWidget() {
     let daySelect = document.querySelector("#days-select");
     let day = daySelect.options[daySelect.selectedIndex].value;
     let temperatures = document.querySelector("span.temperatures");
+    let offer = document.querySelector("span.offer");
 
     temperatures.innerHTML = dayTemps[day];
+    for (let i = 0; i < tempLimits.length; i++) {
+        if (dayTemps[day] <= tempLimits[i]) {
+            offer.innerHTML = offers[i];
+            break;
+        }
+    }
 }
+function calcMinTemp() {
+    let minTemp = document.querySelector("span.min-temp");
+    let least = dayTemps[0];
+    for (let i = 0; i < dayTemps.length; i++) {
+        if (dayTemps[i] < least) {
+            least = dayTemps[i];
+        }
+    }
+    minTemp.innerHTML = "Min: " + least;
+}
+calcMinTemp();
 
+function calcMaxTemp() {
+    let maxTemp = document.querySelector("span.max-temp");
+    let biggest = dayTemps[0];
+    for (let i = 0; i < dayTemps.length; i++) {
+        if (dayTemps[i] > biggest) {
+            biggest = dayTemps[i];
+        }
+    }
+    maxTemp.innerHTML = "Max: " + biggest;
+}
+calcMaxTemp();
+
+function calcAverageTemp() {
+    let sumTemp = 0;
+    let avgTemp = document.querySelector("span.average-temp");
+    for (let i = 0; i < dayTemps.length; i++) {
+        sumTemp += dayTemps[i];
+    }
+    const averageTemp = Math.round(sumTemp / dayTemps.length);
+    avgTemp.innerHTML = "Átl: " + averageTemp;
+}
+calcAverageTemp();
