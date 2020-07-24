@@ -4,7 +4,7 @@ const doubleBurgerPrice = 1000;
 const veggieBurgerPrice = 900;
 const extraHotBurgerPrice = 1200;
 
-const dayTemps = [-1, -5, 3, 14, 16, 25, 30];
+let dayTemps = []; 
 
 const tempLimits = [0, 15, 20, 25, 50];
 const offers = [
@@ -14,6 +14,30 @@ const offers = [
     " Hűsítsd le magad a kedvenc fagyiddal.",
     " Ebben a melegben nincs jobb választás egy jéghideg limonádénál.",
 ];
+
+const xmlhttp = new XMLHttpRequest();
+const url = "https://api.openweathermap.org/data/2.5/onecall?lat=47.4983&lon=19.0408&exclude=hourly,current,minutely&appid=a737f616ba8bc4980f7a8ff6a2d5df84&units=metric";
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myArr = JSON.parse(this.responseText);
+        createDayTemps(myArr);
+    }
+};
+  
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+function createDayTemps(data) {
+    console.log(data);
+    for(let i = 0; i < data.daily.length-1; i++ ) {
+        const date = new Date(data.daily[i].dt * 1000);
+        dayTemps[date.getDay()] = data.daily[i].temp.day; 
+    }
+    console.log(dayTemps);
+    calcMinTemp();
+    calcMaxTemp();
+    calcAverageTemp();
+}
 
 function calcAmount() {
     let subAmount = 0;
@@ -111,7 +135,7 @@ function calcMinTemp() {
     }
     minTemp.innerHTML = "Min: " + least;
 }
-calcMinTemp();
+
 
 function calcMaxTemp() {
     let maxTemp = document.querySelector("span.max-temp");
@@ -123,7 +147,7 @@ function calcMaxTemp() {
     }
     maxTemp.innerHTML = "Max: " + biggest;
 }
-calcMaxTemp();
+
 
 function calcAverageTemp() {
     let sumTemp = 0;
@@ -134,4 +158,5 @@ function calcAverageTemp() {
     const averageTemp = Math.round(sumTemp / dayTemps.length);
     avgTemp.innerHTML = "Átl: " + averageTemp;
 }
-calcAverageTemp();
+
+
