@@ -16,7 +16,7 @@ const offers = [
 ];
 
 const xmlhttp = new XMLHttpRequest();
-const url = "https://api.openweathermap.org/data/2.5/onecall?lat=47.4983&lon=19.0408&exclude=hourly,current,minutely&appid=a737f616ba8bc4980f7a8ff6a2d5df84&units=metric";
+const url = "https://api.openweathermap.org/data/2.5/onecall?lat=48.40983&lon=22.18967&exclude=hourly,current,minutely&appid=a737f616ba8bc4980f7a8ff6a2d5df84&units=metric";
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var myArr = JSON.parse(this.responseText);
