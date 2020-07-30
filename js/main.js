@@ -12,7 +12,7 @@ const offers = [
     " Mai ajánlatunk egy jó meleg tea.",
     " Nincs is jobb ma egy finom sütinél.",
     " Hűsítsd le magad a kedvenc fagyiddal.",
-    " Ebben a melegben nincs jobb választás egy jéghideg limonádénál.",
+    " Melegben a legjobb választás egy jéghideg limonádé.",
 ];
 
 const xmlhttp = new XMLHttpRequest();
