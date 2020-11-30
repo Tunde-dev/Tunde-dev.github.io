@@ -1,49 +1,50 @@
-# Github Pages
+# Travel Agency
 
 ## Story
 
-Making a website to show it only on your laptop is no fun.
-To serve your content, you will need a server. 
+You (the team) just founded a small creative developer agency.
+You had a few successful projects, but you had been waiting for your big chance to proove your skills.
+The big opportunity is here: 
+A youthful, booming, innovative travel agency are looking forward to sitebuild their webdesign. 
+They entrusted your team with the project. Their UI/UX designer is really famous so it will be a really good reference in your portfolio.
 
-Luckily, you won’t always need a whole computer to act as a server, 
-but there are many different ways to share your page. 
-Like when you have a static site - which consists only of HTML, CSS and JS (and image) files - 
-there are many options for hosting. One of the most commonly used one is GitHub Pages, 
-GitHub’s own solution.
-
-Let’s clone a test project, and share it with the world!
+Your team choose one from the 3 AI files and recreate it in HTML/SVG/CSS.
+The page must be responsive and the proportion of the height/width must be constant, but you can resize or leave out as many elements as needed to keep it mobile friendly.
+You can choose which part will become HTML, inline SVG code or SVG file, the goal is to have a web page that looks like the template.
 
 ## What are you going to learn?
 
-- How easy it is to use an online service for hosting
-- A way to publish a static website
+- Using vector graphics
+- Modern web design
+- Build from AI files
 
 ## Tasks
 
-1. Clone the repository under a `projects` folder on your computer (which can be anywhere in your user's home space)!
-    - The repository is cloned into `projects/github-pages-general-GITHUBUSERNAME`.
+1. Recreate one of the templates as an HTML page. The CSS properties of the different elements must match with those from the template.
+    - The page looks like one of these  ![Hokaido Japan](https://learn.code.cool/media/frontend/hokaido.png) ![Iceland](https://learn.code.cool/media/frontend/iceland.png) ![Siargao](https://learn.code.cool/media/frontend/siargao.png)
 
-2. Replace the `replace this` text in the repository
-    - The `replace this` text is replaced with a personal sentence.
-    - The new text is inside a `<p>` tag.
-    - The change is commited in git.
-    - The commit message is meaningful.
-    - There is no typo in the commit message.
+2. Make the page responsive.
+    - The layout does not collapse with the window size changing
 
-3. Follow the official tutorial for a "Project site", and share your project with the world.
-    - The modified webpage is available at https://codecoolglobal.github.io/github-pages-general-GITHUBUSERNAME
+3. [OPTIONAL] According to the templates, create your own destination page. Create unique icons/shapes/pictures for it.
+    - There is a page with the similar design as the templates
+    - The icons are unique from those in the templates
+
+4. [OPTIONAL] Make the burger icon clickable. When someone click on it make a modal shows up and contains links to other destination pages. The links don't need to work.
+    - The cursor changes to pointer if we hover over the burger icon
+    - When we click to the burger icon, a modal shows up that contains links to other destination pages
+    - There is an `X` in the top right corner of the modal, if we click it the modal desapears
 
 ## General requirements
 
-- You need to have Git installed (check `git --version` on your system), otherwise visit [this page](https://git-scm.com/downloads).
+None
 
 ## Hints
 
-- Documentation is the developers best friend.
-- GitHub Pages are available for public, or payed private accounts.
-  `CodecoolGlobal` is a paid organization account, so you can accomplish this project.
-  If you'd like to use GitHub Pages on your personal repository, it has to be set to publicly available, 
-  or you'll need to upgrade your personal account.
+- If your system doesn't contain the font familys from the starting files, you can find them in Google Fonts.
+- Mesure every parameter you can. Font-weight, font-size, space-lining, etc... 
+These are important properties to be as precise as it's expected, mostly if you work from a template.
+- If you want to copy-paste an icon or a picture from the template, you need to separate it in a different artboard.
 
 ## Starting your project
 
@@ -51,4 +52,9 @@ Let’s clone a test project, and share it with the world!
 
 ## Background materials
 
-- <i class="far fa-exclamation"></i> [Official Documentation](https://pages.github.com/)
+- <i class="far fa-book-open"></i> [Google Fonts](https://fonts.google.com/)
+- <i class="far fa-exclamation"></i> [Illustrator interface](https://helpx.adobe.com/illustrator/how-to/ai-basics-fundamentals.html)
+- <i class="far fa-exclamation"></i> [Creating shapes](https://helpx.adobe.com/illustrator/how-to/shapes-basics.html)
+- <i class="far fa-exclamation"></i> [Creating texts](https://helpx.adobe.com/hu/illustrator/how-to/text-basics.html)
+- <i class="far fa-exclamation"></i> [Drawing](https://helpx.adobe.com/illustrator/using/drawing-basics.html)
+- <i class="far fa-exclamation"></i> [Modifying paths](https://helpx.adobe.com/illustrator/using/editing-paths.html)
