@@ -1,50 +1,37 @@
-# Travel Agency
+# Awwwards
 
 ## Story
 
-You (the team) just founded a small creative developer agency.
-You had a few successful projects, but you had been waiting for your big chance to proove your skills.
-The big opportunity is here: 
-A youthful, booming, innovative travel agency are looking forward to sitebuild their webdesign. 
-They entrusted your team with the project. Their UI/UX designer is really famous so it will be a really good reference in your portfolio.
+awwwards.com is a meeting point, where digital design professionals from across the globe find inspiration, impart knowledge and experience, connect, and share constructive, respectful critiques.
 
-Your team choose one from the 3 AI files and recreate it in HTML/SVG/CSS.
-The page must be responsive and the proportion of the height/width must be constant, but you can resize or leave out as many elements as needed to keep it mobile friendly.
-You can choose which part will become HTML, inline SVG code or SVG file, the goal is to have a web page that looks like the template.
+As you (as a team) browse awwwards.com, you find 3 cool looking loading animation that you want to use in your website also.
+The problem is that there is no source code for them, so you need recreate one of them you like the most by seeing the animation.
 
 ## What are you going to learn?
 
-- Using vector graphics
-- Modern web design
-- Build from AI files
+- CSS animations
+- Animations handling
+- Recreate an animation from a website
 
 ## Tasks
 
-1. Recreate one of the templates as an HTML page. The CSS properties of the different elements must match with those from the template.
-    - The page looks like one of these  ![Hokaido Japan](https://learn.code.cool/media/frontend/hokaido.png) ![Iceland](https://learn.code.cool/media/frontend/iceland.png) ![Siargao](https://learn.code.cool/media/frontend/siargao.png)
+1. While the content of the page load in, you need to play a loading animation. Create one of the loading animation from the sample sites.
+    - There is a loading animation in the page
+    - The animation disappears when the page content loaded in
 
-2. Make the page responsive.
-    - The layout does not collapse with the window size changing
-
-3. [OPTIONAL] According to the templates, create your own destination page. Create unique icons/shapes/pictures for it.
-    - There is a page with the similar design as the templates
-    - The icons are unique from those in the templates
-
-4. [OPTIONAL] Make the burger icon clickable. When someone click on it make a modal shows up and contains links to other destination pages. The links don't need to work.
-    - The cursor changes to pointer if we hover over the burger icon
-    - When we click to the burger icon, a modal shows up that contains links to other destination pages
-    - There is an `X` in the top right corner of the modal, if we click it the modal desapears
+2. Recreate the landing page of the choosen web page. Don't need to create all the elements. You need something to display after the loading.
+    - After the animation, a landing page with content in it shows up with animation
 
 ## General requirements
 
-None
+- There is a `<div id="root">` tag without children when the page load in
+- All the contents are placed and removed by javascript
 
 ## Hints
 
-- If your system doesn't contain the font familys from the starting files, you can find them in Google Fonts.
-- Mesure every parameter you can. Font-weight, font-size, space-lining, etc... 
-These are important properties to be as precise as it's expected, mostly if you work from a template.
-- If you want to copy-paste an icon or a picture from the template, you need to separate it in a different artboard.
+- Try to break up the loading animation's elements to know what you should build in your own animation.
+- You can slow down the webpage loading in the DevTools by setup the `Throttling` to `slow 3g` in the `Network` tab.
+- If the loading process is to short and you want to see the animation, you can delay functions with `setTimeout()`.
 
 ## Starting your project
 
@@ -52,9 +39,12 @@ These are important properties to be as precise as it's expected, mostly if you 
 
 ## Background materials
 
-- <i class="far fa-book-open"></i> [Google Fonts](https://fonts.google.com/)
-- <i class="far fa-exclamation"></i> [Illustrator interface](https://helpx.adobe.com/illustrator/how-to/ai-basics-fundamentals.html)
-- <i class="far fa-exclamation"></i> [Creating shapes](https://helpx.adobe.com/illustrator/how-to/shapes-basics.html)
-- <i class="far fa-exclamation"></i> [Creating texts](https://helpx.adobe.com/hu/illustrator/how-to/text-basics.html)
-- <i class="far fa-exclamation"></i> [Drawing](https://helpx.adobe.com/illustrator/using/drawing-basics.html)
-- <i class="far fa-exclamation"></i> [Modifying paths](https://helpx.adobe.com/illustrator/using/editing-paths.html)
+- <i class="far fa-exclamation"></i> [Sample site 1](https://www.mcube.fr)
+- <i class="far fa-exclamation"></i> [Sample site 2](https://metro.solardigital.com.ua/en)
+- <i class="far fa-exclamation"></i> [Sample site 3](https://thibautfoussard.com)
+- <i class="far fa-exclamation"></i> [Animate with CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
+- <i class="far fa-exclamation"></i> [Animation property](https://developer.mozilla.org/en-US/docs/Web/CSS/animation)
+- <i class="far fa-exclamation"></i> [Transition property](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
+- <i class="far fa-exclamation"></i> [Delay functions](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout)
+- <i class="far fa-exclamation"></i> [Place/remove DOM from HTML](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML)
+- <i class="far fa-book-open"></i> [Controlling animations with JS](https://css-tricks.com/controlling-css-animations-transitions-javascript/)

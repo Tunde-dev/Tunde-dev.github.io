@@ -1,0 +1,44 @@
+header {
+    height: 100vh;
+    background-color: $background;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    div {
+        place-self: center;
+        font-size: 5rem;
+        text-shadow: 0px 0px 10px rgba($primary, 1);
+        color: $background;
+        display:inline-block;
+        overflow:hidden;
+        white-space:nowrap;
+        padding-right: 5px;
+
+        &:first-of-type { 
+            animation: showup 7s linear;
+        }
+        &:last-of-type {
+
+            span {
+                margin-left: 19px;
+                animation: slidein 7s linear;
+            }
+        }
+       
+    }
+}
+  
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    100% {opacity:1;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-550px;}
+    20% { margin-left:-550px; }
+    35% { margin-left:19px; }
+    100% { margin-left:19px; }
+}
